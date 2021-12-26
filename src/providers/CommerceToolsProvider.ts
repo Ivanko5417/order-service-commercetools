@@ -75,15 +75,27 @@ export class CommerceToolsProvider {
     return res.body;
   }
 
-  async createOrderByCart(cart: Cart): Promise<Order> {
+  async getCart(cartId: string): Promise<Cart> {
+    console.log('CommerceToolsProvider: Getting Cart...');
+
+    const res = await this.api
+      .carts()
+      .withId({ ID: cartId })
+      .get()
+      .execute();
+
+    return res.body;
+  }
+
+  async createOrderByCart(cartId: string, version: number): Promise<Order> {
     console.log('CommerceToolsProvider: Creating Order by Cart...');
 
     const res = await this.api
       .orders()
       .post({
         body: {
-          id: cart.id,
-          version: 1,
+          id: cartId,
+          version,
         },
       })
       .execute();

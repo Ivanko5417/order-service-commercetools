@@ -6,10 +6,10 @@
   "license": "MIT",
   "scripts": {
     "start": "serverless offline -s dev",
-    "build": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls package --package ./artifacts --config ./serverless.yml --region ${REGION:-us-east-1}",
-    "deploy-package": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls deploy --package ./artifacts --config ./serverless.yml -v --region ${REGION:-us-east-1}",
-    "deploy": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls deploy --config ./serverless.yml -v --region ${REGION:-us-east-1}",
-    "destroy": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls remove --config ./serverless.yml -v --region ${REGION:-us-east-1}",
+    "build": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls package --package ./artifacts --config ./serverless.yml --region ${REGION:-eu-west-1}",
+    "deploy-package": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls deploy --package ./artifacts --config ./serverless.yml -v --region ${REGION:-eu-west-1}",
+    "deploy": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls deploy --config ./serverless.yml -v --region ${REGION:-eu-west-1}",
+    "destroy": "ENV=$(echo $ENV | tr '[:upper:]' '[:lower:]') ./node_modules/.bin/sls remove --config ./serverless.yml -v --region ${REGION:-eu-west-1}",
     "test": "./node_modules/.bin/jest --silent",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx",
     "webpack": "./node_modules/.bin/sls webpack"

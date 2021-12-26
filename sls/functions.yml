@@ -6,7 +6,7 @@ createOrder:
         method: post
         path: orders
         cors: true
-        private: true
+        private: false
 reserveOrder:
   handler: src/handlers/reserveOrder.handler
   name: ${self:custom.namePrefix}-reserve-order-handler

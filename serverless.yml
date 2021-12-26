@@ -7,7 +7,7 @@ provider:
   runtime: nodejs14.x
   memorySize: ${self:custom.env.memorySize}
   stage: ${env:ENV, 'unstaged'}
-  region: ${opt:region, 'us-east-1'}
+  region: ${opt:region, 'eu-west-1'}
   stackName: ${self:service}-${self:provider.stage}
   profile: ${self:custom.profiles.${self:provider.stage}}
   logRetentionInDays: ${self:custom.env.lambdaLogsRotation}
